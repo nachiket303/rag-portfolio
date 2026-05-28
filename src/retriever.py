@@ -41,7 +41,7 @@ def _load_store() -> Chroma:
     return store
 
 
-# ── Public API ────────────────────────────────────────────────────────────────
+# APi
 
 def get_retriever():
     """
@@ -77,7 +77,7 @@ def test_retrieval(query: str) -> None:
         collection_name=COLLECTION_NAME,
     )
 
-    # similarity_search_with_score returns (doc, distance) pairs
+    # SImilarity search is happening here, we are getting the 5 most relevant chunks based on the query
     results = store.similarity_search_with_score(query, k=TOP_K)
 
     print(f"\nQuery: '{query}'")

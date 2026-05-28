@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# *- coding: utf-8 -*
 """
 chain.py - RAG chain using Groq LLM (llama3-8b-8192).
 Builds a LangChain LCEL pipeline: retriever -> prompt -> LLM -> parser.
@@ -34,7 +34,7 @@ _llm = ChatGroq(
     api_key=_GROQ_API_KEY,
 )
 
-# ── System prompt ─────────────────────────────────────────────────────────────
+# This is systeam prompt for LLM to get context  
 _SYSTEM_PROMPT = (
     "You are Nachiket Shejwal, speaking directly to a recruiter who is "
     "considering you for a Machine Learning or AI role. "
@@ -99,7 +99,7 @@ _prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-# ── LCEL chain helpers ────────────────────────────────────────────────────────
+# Chain Helper  
 
 def _format_docs(docs: list[Document]) -> str:
     return "\n\n".join(doc.page_content for doc in docs)
@@ -120,8 +120,7 @@ def _build_chain():
     return chain
 
 
-# Lazy-load the chain the first time it is needed so the server can start
-# even if ChromaDB isn't built yet (health check still works).
+
 _chain = None
 
 

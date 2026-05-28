@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -35,7 +36,7 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# CORS – allow all origins so GitHub Pages (or any frontend) can call this API
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -56,7 +57,7 @@ class ChatResponse(BaseModel):
     sources: list[str]
 
 
-# ── Startup event ─────────────────────────────────────────────────────────────
+# Basically Starting the event  
 
 @app.on_event("startup")
 async def startup_event():
@@ -72,7 +73,7 @@ async def startup_event():
     )
 
 
-# ── Endpoints ─────────────────────────────────────────────────────────────────
+#Endpoints
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
@@ -176,7 +177,7 @@ async def docs_loaded():
 
         total_chunks = store._collection.count()
 
-        # Pull all metadata to extract unique source filenames
+        # Pull meta data to extract the files
         raw = store._collection.get(include=["metadatas"])
         sources = list(
             dict.fromkeys(

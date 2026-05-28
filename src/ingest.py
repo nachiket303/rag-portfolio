@@ -188,15 +188,15 @@ def main():
             else:
                 print("Please enter 1 or 2.")
 
-    # 3. Split into chunks
+    # 3. Spliting into chunks
     print("\nSplitting documents into chunks...")
     chunks = split_documents(documents)
     print(f"Created {len(chunks)} chunks from {len(documents)} PDF(s).")
 
-    # 4. Embed and store
+    # 4. Embeding and storing in ChromaDB
     store_chunks(chunks, wipe=wipe)
 
-    # 5. Summary
+    # 5. Summary 
     print(
         f"\n{DIVIDER}\n"
         "Ingestion complete!\n"
