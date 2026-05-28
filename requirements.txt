@@ -1,0 +1,12 @@
+langchain
+langchain-community
+langchain-groq
+chromadb
+langchain-chroma
+fastapi
+uvicorn[standard]
+pymupdf
+python-dotenv
+pydantic
+fastembed
+groq
