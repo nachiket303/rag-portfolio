@@ -22,7 +22,7 @@ chat with an AI that answers questions about Nachiket Shejwal powered by
 
 ## Local Development
 
-### Step 1 — Get your free Groq API key
+### Step 1 : Get your free Groq API key
 
 1. Go to [console.groq.com](https://console.groq.com)
 2. Sign up with email only — **no credit card needed**
@@ -35,17 +35,17 @@ GROQ_API_KEY=your_key_here
 
 ---
 
-### Step 2 — Install dependencies
+### Step 2 : Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-> First run downloads the `all-MiniLM-L6-v2` model (~90 MB) — one time only.
+> First run downloads the `all-MiniLM-L6-v2` model (~90 MB)  one time only.
 
 ---
 
-### Step 3 — Add your PDF documents
+### Step 3 : Add your PDF documents
 
 Place all your PDFs into the `./docs/` folder:
 
@@ -63,7 +63,7 @@ with a warning (use OCR first if needed).
 
 ---
 
-### Step 4 — Build the knowledge base
+### Step 4 : Build the knowledge base
 
 ```bash
 python src/ingest.py
@@ -79,7 +79,7 @@ This will:
 
 ---
 
-### Step 5 — Start the server
+### Step 5 : Start the server
 
 ```bash
 uvicorn src.app:app --reload --port 8000
@@ -87,7 +87,7 @@ uvicorn src.app:app --reload --port 8000
 
 ---
 
-### Step 6 — Test the health check
+### Step 6 : Test the health check
 
 Open your browser: [http://localhost:8000/health](http://localhost:8000/health)
 
@@ -102,7 +102,7 @@ Expected response:
 
 ---
 
-### Step 7 — Ask a question
+### Step 7 : Ask a question
 
 ```bash
 curl -X POST http://localhost:8000/chat \
@@ -156,7 +156,7 @@ Result 1 (score: 0.87) from: cloudaiapex_report.pdf
 
 ## Deployment to Render (Free)
 
-### Step 1 — Commit `chroma_db/` to GitHub
+### Step 1 : Commit `chroma_db/` to GitHub
 
 ```bash
 # Temporarily remove chroma_db from .gitignore
@@ -175,7 +175,7 @@ git push
 
 ---
 
-### Step 2 — Push code to GitHub
+### Step 2 : Push code to GitHub
 
 ```bash
 # Create a new GitHub repository, then:
@@ -190,7 +190,7 @@ Note: `docs/` and `.env` are gitignored — your PDFs and API key stay private.
 
 ---
 
-### Step 3 — Deploy on Render
+### Step 3 : Deploy on Render
 
 1. Go to [render.com](https://render.com) and sign up free
 2. Click **New → Web Service**
@@ -207,7 +207,7 @@ Your API will be live at: `https://your-app-name.onrender.com`
 
 ---
 
-### Step 4 — Connect your Portfolio Frontend
+### Step 4 : Connect your Portfolio Frontend
 
 In your `Nachiket_Portfolio.html`, find:
 
@@ -271,5 +271,4 @@ If results look wrong, try option 2 (rebuild from scratch) when running `ingest.
 ---
 
 ## License
-
-MIT — feel free to adapt this for your own portfolio.
+Feel free to adapt this for your own portfolio.
