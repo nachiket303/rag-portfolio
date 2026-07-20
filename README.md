@@ -1,8 +1,8 @@
 # Nachiket Portfolio RAG Chatbot
 
 A local **Retrieval-Augmented Generation (RAG)** system that lets recruiters
-chat with an AI that answers questions about Nachiket Shejwal — powered by
-**Groq** (free, no credit card) and your personal PDF documents.
+chat with an AI that answers questions about Nachiket Shejwal powered by
+**Groq**  and your personal PDF documents.
 
 ---
 
@@ -10,8 +10,8 @@ chat with an AI that answers questions about Nachiket Shejwal — powered by
 
 | Layer | Tool |
 |---|---|
-| LLM | Groq API — `llama3-8b-8192` (free tier) |
-| Embeddings | HuggingFace `all-MiniLM-L6-v2` (runs locally, always free) |
+| LLM | Groq API — `llama3-8b-8192` |
+| Embeddings | HuggingFace `all-MiniLM-L6-v2|
 | Vector Store | ChromaDB (persisted locally at `./chroma_db`) |
 | PDF Parsing | PyMuPDF (fitz) |
 | RAG Pipeline | LangChain LCEL |
